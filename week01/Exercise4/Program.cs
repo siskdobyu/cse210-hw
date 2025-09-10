@@ -49,7 +49,7 @@ class Program
         Console.WriteLine($"The sum is: {total}");
         Console.WriteLine($"The average is: {average}");
         Console.WriteLine($"The largest number is: {largest}");
-        Console.WriteLine($"The smallest number is: {smallest}");
+        Console.WriteLine($"The smallest positive number is: {smallest}");
 
         numbers.Sort();
         Console.WriteLine("The sorted list is:");
