@@ -29,6 +29,7 @@ class Program
                     Console.WriteLine(entry._promptText);
                     Console.Write("Your response: ");
                     entry._entryText = Console.ReadLine();
+                    //Additional information in the journal entry - mood and location
                     Console.Write("Your mood: ");
                     entry._mood = Console.ReadLine();
                     Console.Write("Your location: ");
