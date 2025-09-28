@@ -29,6 +29,10 @@ class Program
                     Console.WriteLine(entry._promptText);
                     Console.Write("Your response: ");
                     entry._entryText = Console.ReadLine();
+                    Console.Write("Your mood: ");
+                    entry._mood = Console.ReadLine();
+                    Console.Write("Your location: ");
+                    entry._location = Console.ReadLine();
                     journal.addEntry(entry);
                     break;
 

@@ -24,7 +24,7 @@ public class Journal
         {
             foreach (Entry entry in _entries)
             {
-                writer.WriteLine($"{entry._date}|{entry._promptText}|{entry._entryText}");
+                writer.WriteLine($"{entry._date}|{entry._promptText}|{entry._entryText}|{entry._mood}|{entry._location}");
             }
         }
 
@@ -34,23 +34,31 @@ public class Journal
     {
         _entries.Clear();
 
-        if (File.Exists(filename))
-        {
+        // if (File.Exists(filename))
+        // {
             string[] lines = File.ReadAllLines(filename);
             foreach (string line in lines)
             {
                 string[] parts = line.Split('|');
-                if (parts.Length == 3)
-                {
-                    Entry entry = new Entry
-                    {
-                        _date = parts[0],
-                        _promptText = parts[1],
-                        _entryText = parts[2]
-                    };
-                    _entries.Add(entry);
-                }
+                // if (parts.Length == 3)
+                // {
+                //     Entry entry = new Entry
+                //     {
+                //         _date = parts[0],
+                //         _promptText = parts[1],
+                //         _entryText = parts[2]
+                //     };
+                //     _entries.Add(entry);
+                // }
+                Entry entry = new Entry();
+                entry._date = parts[0];
+                entry._promptText = parts[1];
+                entry._entryText = parts[2];
+                entry._mood = parts[3];
+                entry._location = parts[4];
+
+                _entries.Add(entry);
             }
-        }
+        // }
     }
 }
